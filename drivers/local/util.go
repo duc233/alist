@@ -95,7 +95,7 @@ func (d *Local) getThumb(file model.Obj) (*bytes.Buffer, *string, error) {
 	if err != nil {
 		return nil, nil, err
 	}
-	thumbImg := imaging.Resize(image, 144, 0, imaging.Lanczos)
+	thumbImg := imaging.Resize(image, 640, 0, imaging.Lanczos)
 	var buf bytes.Buffer
 	err = imaging.Encode(&buf, thumbImg, imaging.PNG)
 	if err != nil {
